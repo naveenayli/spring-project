@@ -2,7 +2,9 @@ node {
     checkout scm
     stage('Compile_And_Package') {
 bat 'mvn clean package -DskipTests'
+
 }
+
 stage('Unit_Test'){
 bat 'mvn surefire:test'
 step([$class: 'Publisher'])
